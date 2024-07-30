@@ -1,11 +1,13 @@
 import About from "@/components/About";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Map from "@/components/Map";
 import Menu from "@/components/Menu";
 import Reservation from "@/components/Reservation";
 import StyleGuide from "@/components/StyleGuide";
+import dynamic from "next/dynamic";
+
+const Map = dynamic(() => import("../components/Map"), { ssr: false });
+const Header = dynamic(() => import("../components/Header"), { ssr: false });
 
 export default function Home() {
   return (
